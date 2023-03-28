@@ -35,7 +35,6 @@ source ${SCRAM_TOOLS_BIN_DIR}/os_libdir.sh
 
 GCC_CXXFLAGS=""
 GCC_CXXFLAGS="$GCC_CXXFLAGS -std=c++1z -ftree-vectorize"
-GCC_CXXFLAGS="$GCC_CXXFLAGS -Wstrict-overflow"
 GCC_CXXFLAGS="$GCC_CXXFLAGS -Werror=array-bounds -Werror=format-contains-nul -Werror=type-limits"
 GCC_CXXFLAGS="$GCC_CXXFLAGS -fvisibility-inlines-hidden"
 GCC_CXXFLAGS="$GCC_CXXFLAGS -fno-math-errno --param vect-max-version-for-alias-checks=50"
@@ -58,6 +57,7 @@ export GCC_LDFLAGS="${OS_LDFLAGS} ${ARCH_LDFLAGS} ${GCC_LDFLAGS} ${COMPILER_LDFL
 export GCC_LD_UNIT="${OS_LD_UNIT} ${ARCH_LD_UNIT} ${GCC_LD_UNIT} ${COMPILER_LD_UNIT}"
 export GCC_SHAREDFLAGS="${OS_SHAREDFLAGS} ${ARCH_SHAREDFLAGS} ${GCC_SHAREDFLAGS} ${COMPILER_SHAREDFLAGS}"
 export COMPILER_NAME_SUFFIX
+export COMPILER_HOST=$(gcc -dumpmachine)
 
 #F77-COMPILER
 export GCC_FFLAGS="${OS_FFLAGS} ${ARCH_FFLAGS} ${GCC_FFLAGS} ${COMPILER_FFLAGS}"
