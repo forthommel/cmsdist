@@ -3,7 +3,7 @@
 Source: https://github.com/cepgen/cepgen/archive/refs/tags/%{realversion}.tar.gz
 
 BuildRequires: cmake ninja
-Requires: gsl OpenBLAS hepmc hepmc3 lhapdf pythia6 root bz2lib zlib xz
+Requires: gsl OpenBLAS hepmc lhapdf pythia6 root bz2lib zlib xz
 
 %prep
 %setup -n %{n}-%{realversion}
